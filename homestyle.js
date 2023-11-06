@@ -31,7 +31,7 @@ const ProdutodecoracaoSchema = new mongoose.Schema({
     id_produtodecoracao: {type : String, required : true},
     Descricao: {type : String},
     Fornecedor: {type : String},
-    Data_fabricacao: {type : D},
+    Data_fabricacao: {type : Date},
     Quantidade_estoque: {type : Number}
 });
 
@@ -39,12 +39,10 @@ const ProdutodecoracaoSchema = new mongoose.Schema({
 const Produtodecoracao = mongoose.model("Produtodecoracao", ProdutodecoracaoSchema);
 
 
-
 //configurando os roteamentos
 app.post("/cadastrousuario", async(req, res)=>{
     const email = req.body.email;
     const senha = req.body.senha
-
 
     const Usuario = new Usuario({
         email : email,
